@@ -18,6 +18,7 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 	
+	
 	//根据id查询单个商品
 	@RequestMapping("/{itemId}")
 	@ResponseBody
