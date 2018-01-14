@@ -23,7 +23,7 @@
 
     function getSelectionsIds(){
     	var itemList = $("#itemList");
-    	var sels = itemList.datagrid("getSelections");
+    	var sels = itemList.datagrid("getSelections");//返回所有被选中的行，当没有记录被选中的时候将返回一个空数组。
     	var ids = [];
     	for(var i in sels){
     		ids.push(sels[i].id);

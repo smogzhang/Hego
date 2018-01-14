@@ -19,8 +19,9 @@
 	<!-- 注解扫描包 -->
 	<context:component-scan base-package="cn.ego.controller"></context:component-scan>
 	<!-- 静态资源 -->
-	<mvc:resources location="/WEB-INF/css" mapping="/css/**"></mvc:resources>
-	<mvc:resources location="/WEB-INF/js" mapping="/js/**"></mvc:resources>
+	<!-- <mvc:default-servlet-handler/> -->
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"></mvc:resources>
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />

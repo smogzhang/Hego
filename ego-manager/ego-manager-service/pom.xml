@@ -9,6 +9,12 @@
 	<artifactId>ego-manager-service</artifactId>
 
 	<dependencies>
+		<!-- 其它依赖工程 -->
+		<dependency>
+			<groupId>cn.ego</groupId>
+			<artifactId>ego-commn</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>cn.ego</groupId>
 			<artifactId>ego-manager-pojo</artifactId>
@@ -19,10 +25,19 @@
 			<artifactId>ego-manager-mapper</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!-- springmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
+		</dependency>
+		<!-- 分页组件 -->
+		<dependency>
+			<groupId>com.github.miemiedev</groupId>
+			<artifactId>mybatis-paginator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
 		</dependency>
 	</dependencies>
 

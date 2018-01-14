@@ -49,13 +49,14 @@
 $(function(){
 	$('#menu').tree({
 		onClick: function(node){
+			console.log(node);
 			if($('#menu').tree("isLeaf",node.target)){
 				var tabs = $("#tabs");
-				var tab = tabs.tabs("getTab",node.text);
+				var tab = tabs.tabs("getTab",node.text);//根据node.text去获得tab
 				if(tab){
-					tabs.tabs("select",node.text);
+					tabs.tabs("select",node.text);//若有，则选择该tab
 				}else{
-					tabs.tabs('add',{
+					tabs.tabs('add',{//若无，则新开一个tab
 					    title:node.text,
 					    href: node.attributes.url,
 					    closable:true,
