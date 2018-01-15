@@ -1,2 +1,5 @@
+cn\ego\bean\PictureResult.class
+cn\ego\utils\FtpUtil.class
 cn\ego\bean\EUTreeNode.class
+cn\ego\utils\IDUtils.class
 cn\ego\bean\EUDataGridResult.class

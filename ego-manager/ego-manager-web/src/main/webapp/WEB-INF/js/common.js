@@ -64,6 +64,8 @@ var TT = EGO = {
     },
     // 初始化图片上传组件
     initPicUpload : function(data){
+    	//********************************
+    	console.log(data);
     	$(".picFileUpload").each(function(i,e){
     		var _ele = $(e);
     		_ele.siblings("div.pics").remove();
@@ -82,6 +84,8 @@ var TT = EGO = {
         	}
         	//给“上传图片按钮”绑定click事件
         	$(e).click(function(){
+        		//********************************
+        		console.log($(e));
         		var form = $(this).parentsUntil("form").parent("form");
         		//打开图片上传窗口
         		KindEditor.editor(TT.kingEditorParams).loadPlugin('multiimage',function(){
