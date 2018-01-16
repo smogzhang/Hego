@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.ego.bean.EUDataGridResult;
+import cn.ego.bean.EgoResult;
 import cn.ego.pojo.TbItem;
 import cn.ego.service.ItemService;
 
@@ -31,6 +32,19 @@ public class ItemController {
 	@ResponseBody
 	public EUDataGridResult listItem(@RequestParam(value="page",defaultValue="1") int page, int rows) {
 		return itemService.listItem(page, rows);
+	}
+	
+	/**
+	 * 新增商品功能
+	 * @param item 商品基本信息
+	 * @param desc 商品描述信息，由前端提供html文本语言的textarea
+	 * @return
+	 */
+	@RequestMapping("/save")
+	@ResponseBody
+	public EgoResult saveItemWithDesc(TbItem item, String desc) {
+		itemService.saveItemWithDesc(item, desc);
+		return EgoResult.ok();
 	}
 	
 }
