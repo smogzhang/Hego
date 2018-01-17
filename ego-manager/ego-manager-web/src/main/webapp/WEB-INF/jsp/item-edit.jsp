@@ -67,8 +67,8 @@
 <script type="text/javascript">
 	var itemEditEditor ;
 	$(function(){
-		//实例化编辑器
-		itemEditEditor = TAOTAO.createEditor("#itemeEditForm [name=desc]");
+		//实例化编辑器TAOTAO
+		itemEditEditor = TT.createEditor("#itemeEditForm [name=desc]");
 	});
 	
 	function submitForm(){

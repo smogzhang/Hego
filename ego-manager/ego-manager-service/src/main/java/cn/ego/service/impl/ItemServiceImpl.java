@@ -68,4 +68,57 @@ public class ItemServiceImpl implements ItemService {
 		itemDesc.setUpdated(date);
 		itemDescMapper.insert(itemDesc);
 	}
+
+	@Override
+	public void updateItemWithDesc(TbItem item, String desc) throws Exception {
+		//更新时间
+		Date updateDate = new Date();
+		
+		TbItem originalItem = itemMapper.selectByPrimaryKey(item.getId());
+		originalItem.setBarcode(item.getBarcode());
+		originalItem.setCid(item.getCid());
+		originalItem.setImage(item.getImage());
+		originalItem.setNum(item.getNum());
+		originalItem.setPrice(item.getPrice());
+		originalItem.setSellPoint(item.getSellPoint());
+		originalItem.setTitle(item.getTitle());
+		originalItem.setUpdated(updateDate);
+		itemMapper.updateByPrimaryKey(originalItem);
+		
+		TbItemDesc originalItemDesc = itemDescMapper.selectByPrimaryKey(item.getId());
+		originalItemDesc.setItemDesc(desc);
+		originalItemDesc.setUpdated(updateDate);
+		itemDescMapper.updateByPrimaryKey(originalItemDesc);
+	}
+
+	@Override
+	public void updateReshelfItemById(long itemId) throws Exception {
+		changeItemStatus(itemId, "reshelf");
+	}
+
+	@Override
+	public void updateInstockItemById(long itemId) throws Exception {
+		changeItemStatus(itemId, "instock");
+	}
+
+	//删除商品，至status为3 或者 直接删除数据库记录？
+	@Override
+	public void deleteItemById(long itemId) throws Exception {
+		changeItemStatus(itemId, "delete");
+	}
+	
+	private void changeItemStatus(long itemId, String status) throws Exception {
+		TbItem item = itemMapper.selectByPrimaryKey(itemId);
+		item.setUpdated(new Date());
+		// 商品状态，1-正常，2-下架，3-删除
+		if("delete".equals(status)) {
+			item.setStatus((byte) 3);
+		} else if ("instock".equals(status)) {
+			item.setStatus((byte) 2);
+		} else if ("reshelf".equals(status)) {
+			item.setStatus((byte) 1);
+		}
+		itemMapper.updateByPrimaryKey(item);
+	}
+	
 }

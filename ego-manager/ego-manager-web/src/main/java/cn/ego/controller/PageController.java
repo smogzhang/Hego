@@ -13,9 +13,16 @@ public class PageController {
 		return "index";
 	}
 	
-	//展现其它页面
+	//展现首页内嵌页面
 	@RequestMapping("/{page}")
 	public String showPage(@PathVariable String page) {
+		return page;
+	}
+	
+	//展现首页内嵌内嵌页面
+	//商品列表页面的 编辑、删除、上架、下架页面/rest/page/**
+	@RequestMapping("/rest/page/{page}")
+	public String showRestPage(@PathVariable String page) {
 		return page;
 	}
 	
