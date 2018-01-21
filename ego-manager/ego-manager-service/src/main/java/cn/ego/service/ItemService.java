@@ -12,7 +12,7 @@ public interface ItemService {
 	EUDataGridResult listItem(int page, int rows);
 
 	//新增商品功能 item:商品表，desc：商品描述表，用商品id关联
-	void saveItemWithDesc(TbItem item, String desc);
+	void saveItemWithDesc(TbItem item, String desc, String itemParams);
 
 	//更新 item:商品表，desc：商品描述表，用商品id关联
 	void updateItemWithDesc(TbItem item, String desc) throws Exception;

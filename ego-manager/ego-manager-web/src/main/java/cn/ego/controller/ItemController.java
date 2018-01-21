@@ -36,14 +36,16 @@ public class ItemController {
 	
 	/**
 	 * 新增商品功能
+	 * 更新：接收商品规格参数，并保存
 	 * @param item 商品基本信息
 	 * @param desc 商品描述信息，由前端提供html文本语言的textarea
+	 * @param itemParams 商品规格
 	 * @return
 	 */
 	@RequestMapping("/save")
 	@ResponseBody
-	public EgoResult saveItemWithDesc(TbItem item, String desc) {
-		itemService.saveItemWithDesc(item, desc);
+	public EgoResult saveItemWithDesc(TbItem item, String desc, String itemParams) {
+		itemService.saveItemWithDesc(item, desc, itemParams);
 		return EgoResult.ok();
 	}
 	

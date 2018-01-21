@@ -12,9 +12,11 @@ import com.github.pagehelper.PageInfo;
 import cn.ego.bean.EUDataGridResult;
 import cn.ego.mapper.TbItemDescMapper;
 import cn.ego.mapper.TbItemMapper;
+import cn.ego.mapper.TbItemParamItemMapper;
 import cn.ego.pojo.TbItem;
 import cn.ego.pojo.TbItemDesc;
 import cn.ego.pojo.TbItemExample;
+import cn.ego.pojo.TbItemParamItem;
 import cn.ego.service.ItemService;
 import cn.ego.utils.IDUtils;
 
@@ -25,6 +27,8 @@ public class ItemServiceImpl implements ItemService {
 	private TbItemMapper itemMapper;
 	@Autowired
 	private TbItemDescMapper itemDescMapper;
+	@Autowired
+	private TbItemParamItemMapper itemParamItemMapper;
 
 	@Override
 	public TbItem getItemById(Long itemId) {
@@ -49,7 +53,7 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public void saveItemWithDesc(TbItem item, String desc) {
+	public void saveItemWithDesc(TbItem item, String desc, String itemParams) {
 
 		long itemId = IDUtils.genItemId();
 		Date date = new Date();
@@ -67,6 +71,16 @@ public class ItemServiceImpl implements ItemService {
 		itemDesc.setCreated(date);
 		itemDesc.setUpdated(date);
 		itemDescMapper.insert(itemDesc);
+		
+		//更新：接收商品规格参数，并保存
+		//[{"group":"多媒体分组1","params":[{"k":"值1","v":"值11"},{"k":"值2","v":"值21"}]}]
+		TbItemParamItem itemParamItem = new TbItemParamItem();
+//		itemParamItem.setId(id); 数据库设置为自动更新
+		itemParamItem.setItemId(itemId);
+		itemParamItem.setParamData(itemParams);
+		itemParamItem.setCreated(date);
+		itemParamItem.setUpdated(date);
+		itemParamItemMapper.insert(itemParamItem);
 	}
 
 	@Override
