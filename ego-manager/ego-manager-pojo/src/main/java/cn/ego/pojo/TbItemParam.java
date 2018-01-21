@@ -5,7 +5,7 @@ import java.util.Date;
 public class TbItemParam {
     private Long id;
 
-    private Long itemCatId;
+    private long itemCatId;
 
     private Date created;
 
@@ -20,16 +20,16 @@ public class TbItemParam {
     public void setId(Long id) {
         this.id = id;
     }
+    
+	public long getItemCatId() {
+		return itemCatId;
+	}
 
-    public Long getItemCatId() {
-        return itemCatId;
-    }
+	public void setItemCatId(long itemCatId) {
+		this.itemCatId = itemCatId;
+	}
 
-    public void setItemCatId(Long itemCatId) {
-        this.itemCatId = itemCatId;
-    }
-
-    public Date getCreated() {
+	public Date getCreated() {
         return created;
     }
 

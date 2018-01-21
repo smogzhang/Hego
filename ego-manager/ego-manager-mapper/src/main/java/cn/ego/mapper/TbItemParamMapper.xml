@@ -10,6 +10,28 @@
   <resultMap id="ResultMapWithBLOBs" type="cn.ego.pojo.TbItemParam" extends="BaseResultMap" >
     <result column="param_data" property="paramData" jdbcType="LONGVARCHAR" />
   </resultMap>
+    <!-- 添加返回数据 -->
+    <resultMap type="cn.ego.vo.ItemParamDataVo" id="ParamDataBean">
+    	<id column="id" property="id" jdbcType="BIGINT" />
+    	<result column="itemCatId" property="itemCatId" jdbcType="BIGINT" />
+    	<result column="itemCatName" property="itemCatName" jdbcType="VARCHAR" />
+    	<result column="paramData" property="paramData" jdbcType="LONGVARCHAR" />
+    	<result column="created" property="created" jdbcType="TIMESTAMP"/>
+    	<result column="updated" property="updated" jdbcType="TIMESTAMP"/>
+    </resultMap>
+  <!-- 自定义多表查询，获取商品类目名称 -->
+  <select id="selectItemParamWithItemCatName" resultMap="ParamDataBean">
+   SELECT
+		tip.id id,
+		tic.id itemCatId,
+		tic. NAME itemCatName,
+		tip.param_data paramData,
+		tip.created created,
+		tip.updated updated
+	FROM
+		tb_item_param tip
+	LEFT JOIN tb_item_cat tic ON tip.item_cat_id = tic.id
+  </select>
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

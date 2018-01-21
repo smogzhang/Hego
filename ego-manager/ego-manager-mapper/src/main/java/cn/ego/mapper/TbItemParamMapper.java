@@ -2,6 +2,8 @@ package cn.ego.mapper;
 
 import cn.ego.pojo.TbItemParam;
 import cn.ego.pojo.TbItemParamExample;
+import cn.ego.vo.ItemParamDataVo;
+
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -16,6 +18,8 @@ public interface TbItemParamMapper {
 
     int insertSelective(TbItemParam record);
 
+    List<ItemParamDataVo> selectItemParamWithItemCatName();
+    
     List<TbItemParam> selectByExampleWithBLOBs(TbItemParamExample example);
 
     List<TbItemParam> selectByExample(TbItemParamExample example);
