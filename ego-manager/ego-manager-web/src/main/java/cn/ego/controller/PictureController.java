@@ -10,7 +10,7 @@ import cn.ego.bean.PictureResult;
 import cn.ego.service.PictureService;
 
 /**
- * 文件上传
+ * 图片上传
  * @author Sully
  *
  */

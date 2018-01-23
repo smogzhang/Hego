@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import cn.ego.bean.EUDataGridResult;
 import cn.ego.bean.EgoResult;
 import cn.ego.service.ItemParamService;
-
+/**
+ * 商品参数模板管理
+ * @author Sully
+ *
+ */
 @Controller
 @RequestMapping("/item/param")
 public class ItemParamController {

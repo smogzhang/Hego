@@ -11,7 +11,11 @@ import cn.ego.bean.EUDataGridResult;
 import cn.ego.bean.EgoResult;
 import cn.ego.pojo.TbItem;
 import cn.ego.service.ItemService;
-
+/**
+ * 商品管理类
+ * @author Sully
+ *
+ */
 @Controller
 @RequestMapping("/item")
 public class ItemController {

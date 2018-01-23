@@ -36,14 +36,10 @@
 		<!-- 导入mybatis核心文件配置的分页插件信息 -->
 		<property name="configLocation" value="classpath:sqlMapConfig.xml" />
 	</bean>
-<<<<<<< HEAD
-	
 	
 	<!-- 重要！！踩过坑！！***添加动态代理mapper类*** -->
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="cn.ego.mapper" />
 	</bean>
-=======
->>>>>>> bd37ba8fa2fe099c5948738d46e5e2f6f86c3d1f
 </beans>

@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.ego.bean.EUTreeNode;
 import cn.ego.service.ItemCatService;
-
+/**
+ * 商品分类管理
+ * @author Sully
+ *
+ */
 @Controller
 @RequestMapping("/item/cat")
 public class ItemCatController {

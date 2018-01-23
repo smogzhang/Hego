@@ -3,7 +3,11 @@ package cn.ego.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+/**
+ * manager 页面跳转管理
+ * @author Sully
+ *
+ */
 @Controller
 public class PageController {
 

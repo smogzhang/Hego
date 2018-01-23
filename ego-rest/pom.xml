@@ -69,14 +69,11 @@
 			<artifactId>servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
-<<<<<<< HEAD
 		<!-- Jackson Json处理工具包 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
-=======
->>>>>>> bd37ba8fa2fe099c5948738d46e5e2f6f86c3d1f
 	</dependencies>
 	<build>
 		<plugins>
@@ -91,5 +88,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

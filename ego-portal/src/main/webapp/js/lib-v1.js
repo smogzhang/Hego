@@ -1172,11 +1172,8 @@ $.extend(jdModelCallCenter, {autoLocation: function(a) {
 var category = {OBJ: $("#_JD_ALLSORT"),
 		//URL_Serv: "http://manage.ego.com/web/item/all?callback=category.getDataService",
 		URL_Serv: "http://localhost:8081/rest/item/all?callback=category.getDataService",
-<<<<<<< HEAD
 //		URL_Serv: "/category.json",
-=======
 //		URL_Serv: "http://localhost:8081/category.json",
->>>>>>> bd37ba8fa2fe099c5948738d46e5e2f6f86c3d1f
 		URL_BrandsServ: "http://d.360buy.com/brandVclist2/get?callback=category.getBrandService&ids=a,9211,9212^b,9214,9215^c,9217,9218^d,9220,9221^e,9223,9224^f,9226,9227^g,9229,9230^h,9232,9233^m,9235,9236^i,9238,9239^j,9241,9242^p,9244,9245^k,9247,9248^l,9250,9251",
 		FN_GetLink: function(a, b) {
 	        var c, d;
