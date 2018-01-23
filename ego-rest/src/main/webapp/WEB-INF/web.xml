@@ -41,6 +41,10 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dispatcherServlet</servlet-name>
+<<<<<<< HEAD
 		<url-pattern>/</url-pattern>
+=======
+		<url-pattern>/rest/*</url-pattern>
+>>>>>>> bd37ba8fa2fe099c5948738d46e5e2f6f86c3d1f
 	</servlet-mapping>
 </web-app>
