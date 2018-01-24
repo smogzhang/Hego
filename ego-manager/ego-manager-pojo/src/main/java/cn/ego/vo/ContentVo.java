@@ -11,6 +11,8 @@ import java.util.Date;
 public class ContentVo {
 
 	private long id;
+	private long categoryId; // 用于修改内容时
+	private String content; // 用于修改内容时
 	private String title;
 	private String subTitle;
 	private String titleDesc;
@@ -26,6 +28,22 @@ public class ContentVo {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public long getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(long categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public String getTitle() {
