@@ -1,6 +1,8 @@
 cn\ego\bean\PictureResult.class
 cn\ego\utils\FtpUtil.class
+cn\ego\utils\HttpClientUtil.class
 cn\ego\bean\EUTreeNode.class
 cn\ego\utils\IDUtils.class
 cn\ego\bean\EgoResult.class
+cn\ego\utils\JsonUtils.class
 cn\ego\bean\EUDataGridResult.class

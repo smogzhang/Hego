@@ -4,3 +4,5 @@ Failed to load http://***** No 'Access-Control-Allow-Origin' header is present o
 3.解决办法
 	1)、利用script标签(被浏览器允许跨域请求)，请求js数据，利用回调函数解析数据
 	2)、服务器端解决，利用HttpClient
+通俗说法：跨域分前台解决和后台解决，前台如果发送jsonp、http请求则后台不可以直接返回json数据，(前台知道要跨域，所以不接收json数据)，需要修改格式为
+带回调函数的js数据，用于页面渲染。而使用json请求，浏览器默认不跨域，后台使用httpClient解决跨域请求(返回json数据)。
