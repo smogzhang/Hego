@@ -1,6 +1,6 @@
 package cn.ego.rest.service;
 
-import cn.ego.rest.bean.ItemCatResult;
+import cn.ego.bean.ItemCatResult;
 
 public interface ItemCatService {
 

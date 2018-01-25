@@ -6,12 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.ego.bean.ItemCatResult;
 import cn.ego.mapper.TbItemCatMapper;
 import cn.ego.pojo.TbItemCat;
 import cn.ego.pojo.TbItemCatExample;
 import cn.ego.pojo.TbItemCatExample.Criteria;
 import cn.ego.rest.bean.ItemCat;
-import cn.ego.rest.bean.ItemCatResult;
 import cn.ego.rest.service.ItemCatService;
 
 @Service

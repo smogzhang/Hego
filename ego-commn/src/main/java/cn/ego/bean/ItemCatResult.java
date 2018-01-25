@@ -1,4 +1,4 @@
-package cn.ego.rest.bean;
+package cn.ego.bean;
 
 import java.util.List;
 

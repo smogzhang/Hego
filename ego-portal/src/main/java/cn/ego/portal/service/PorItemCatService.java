@@ -1,6 +1,6 @@
 package cn.ego.portal.service;
 
-import cn.ego.rest.bean.ItemCatResult;
+import cn.ego.bean.ItemCatResult;
 
 public interface PorItemCatService {
 

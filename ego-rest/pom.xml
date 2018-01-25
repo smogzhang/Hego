@@ -10,6 +10,11 @@
 	<packaging>war</packaging>
 
 	<dependencies>
+		<dependency>
+			<groupId>cn.ego</groupId>
+			<artifactId>ego-commn</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- 依赖ego-manager-mapper工程 -->
 		<dependency>
 			<groupId>cn.ego</groupId>
@@ -84,15 +89,6 @@
 				<configuration>
 					<port>8081</port>
 					<path>/</path>
-				</configuration>
-			</plugin>
-			<!-- 配置该项目为被依赖的war -->
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<!-- 把class打包jar作为附件 -->
-					<attachClasses>true</attachClasses>
-					<!-- 将项目的类文件打成jar放到lib目录中 <archiveClasses>true</archiveClasses> -->
 				</configuration>
 			</plugin>
 		</plugins>

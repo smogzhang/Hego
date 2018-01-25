@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.ego.bean.ItemCatResult;
 import cn.ego.portal.service.PorItemCatService;
-import cn.ego.rest.bean.ItemCatResult;
 
 /**
  * 商品分类展示
