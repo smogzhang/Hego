@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import cn.ego.bean.ItemCatResult;
 import cn.ego.mapper.TbItemCatMapper;
@@ -12,18 +14,42 @@ import cn.ego.pojo.TbItemCat;
 import cn.ego.pojo.TbItemCatExample;
 import cn.ego.pojo.TbItemCatExample.Criteria;
 import cn.ego.rest.bean.ItemCat;
+import cn.ego.rest.dao.JedisClient;
 import cn.ego.rest.service.ItemCatService;
+import cn.ego.utils.JsonUtils;
 
 @Service
 public class ItemCatServiceImpl implements ItemCatService {
 
 	@Autowired
 	private TbItemCatMapper itemCatMapper;
+	@Autowired
+	private JedisClient jedisCluster;
+	@Value("${ITEM_CATEGORY_IDENTIFYING}")
+	private String ITEM_CATEGORY_IDENTIFYING;
+	
 	
 	@Override
 	public ItemCatResult queryAllItemCats() {
-		ItemCatResult itemCatResult = new ItemCatResult();
-		itemCatResult.setData(listChild(0l));
+		ItemCatResult itemCatResult = null;
+		//查询缓存
+		try {
+			String cacheData = jedisCluster.hget(ITEM_CATEGORY_IDENTIFYING, 0 + "");
+			if(!StringUtils.isEmpty(cacheData)) {
+				itemCatResult = new ItemCatResult();
+				itemCatResult.setData(JsonUtils.jsonToList(cacheData, Object.class));
+				return itemCatResult;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		itemCatResult = new ItemCatResult();
+		List<Object> objects = listChild(0l);
+		//添加缓存
+		if(objects != null && objects.size() > 0) {
+			jedisCluster.hset(ITEM_CATEGORY_IDENTIFYING, 0 + "", JsonUtils.objectToJson(objects));
+		}
+		itemCatResult.setData(objects);
 		return itemCatResult;
 	}
 

@@ -23,6 +23,11 @@ public class ContentController {
 	@Autowired
 	private ContentService contentService;
 	
+	/**
+	 * 根据内容id查询内容
+	 * @param categoryId
+	 * @return
+	 */
 	@RequestMapping("/advertising/{categoryId}")
 	@ResponseBody
 	public List<ADItem> listADsByContentCategory(@PathVariable long categoryId) {

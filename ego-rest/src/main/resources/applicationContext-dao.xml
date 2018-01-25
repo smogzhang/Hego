@@ -42,4 +42,5 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="cn.ego.mapper" />
 	</bean>
+	<bean class="cn.ego.rest.dao.impl.JedisClientCluster"></bean>
 </beans>
