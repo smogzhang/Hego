@@ -1,6 +1,6 @@
 package cn.ego.search.service;
 
-import cn.ego.search.bean.SearchResult;
+import cn.ego.bean.search.SearchResult;
 
 public interface ItemSearchService {
 

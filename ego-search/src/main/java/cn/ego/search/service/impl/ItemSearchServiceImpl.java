@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import cn.ego.search.bean.SearchResult;
+import cn.ego.bean.search.SearchResult;
 import cn.ego.search.dao.ItemSearchDao;
 import cn.ego.search.service.ItemSearchService;
 

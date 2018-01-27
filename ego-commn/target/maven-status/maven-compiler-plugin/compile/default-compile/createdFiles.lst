@@ -1,5 +1,7 @@
 cn\ego\bean\PictureResult.class
+cn\ego\bean\search\Item.class
 cn\ego\utils\FtpUtil.class
+cn\ego\bean\search\SearchResult.class
 cn\ego\utils\HttpClientUtil.class
 cn\ego\bean\EUTreeNode.class
 cn\ego\bean\ItemCatResult.class

@@ -1,4 +1,4 @@
-package cn.ego.search.bean;
+package cn.ego.bean.search;
 
 /**
  * 单个商品类，与solr core属性对应

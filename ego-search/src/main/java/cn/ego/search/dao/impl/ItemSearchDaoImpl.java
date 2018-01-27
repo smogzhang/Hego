@@ -12,8 +12,8 @@ import org.apache.solr.common.SolrDocumentList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import cn.ego.search.bean.Item;
-import cn.ego.search.bean.SearchResult;
+import cn.ego.bean.search.Item;
+import cn.ego.bean.search.SearchResult;
 import cn.ego.search.dao.ItemSearchDao;
 
 @Repository

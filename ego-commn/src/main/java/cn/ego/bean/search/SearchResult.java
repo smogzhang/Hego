@@ -1,4 +1,4 @@
-package cn.ego.search.bean;
+package cn.ego.bean.search;
 
 import java.util.List;
 
