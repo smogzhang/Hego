@@ -33,8 +33,6 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 数据库连接池 -->
 		<property name="dataSource" ref="dataSource" />
-		<!-- 导入mybatis核心文件配置的分页插件信息 -->
-		<property name="configLocation" value="classpath:sqlMapConfig.xml" />
 	</bean>
 	
 	<!-- 重要！！踩过坑！！***添加动态代理mapper类*** -->

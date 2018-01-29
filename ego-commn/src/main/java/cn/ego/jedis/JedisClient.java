@@ -1,4 +1,4 @@
-package cn.ego.rest.dao;
+package cn.ego.jedis;
 /**
  * jdies 接口
  * @author Sully

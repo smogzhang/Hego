@@ -1,8 +1,8 @@
-package cn.ego.rest.dao.impl;
+package cn.ego.jedis.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import cn.ego.rest.dao.JedisClient;
+import cn.ego.jedis.JedisClient;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 /**

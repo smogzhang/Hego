@@ -1,11 +1,14 @@
-E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\PictureResult.java
 E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\utils\JsonUtils.java
 E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\EgoResult.java
-E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\EUTreeNode.java
+E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\jedis\JedisClient.java
 E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\utils\HttpClientUtil.java
-E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\search\SearchResult.java
+E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\jedis\impl\JedisClientSingle.java
+E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\jedis\impl\JedisClientCluster.java
 E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\utils\FtpUtil.java
 E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\utils\IDUtils.java
 E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\EUDataGridResult.java
 E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\ItemCatResult.java
+E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\PictureResult.java
+E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\EUTreeNode.java
+E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\search\SearchResult.java
 E:\GitRepository\Hego\ego-commn\src\main\java\cn\ego\bean\search\Item.java

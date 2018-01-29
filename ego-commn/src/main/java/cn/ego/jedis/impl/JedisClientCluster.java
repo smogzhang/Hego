@@ -1,14 +1,16 @@
-package cn.ego.rest.dao.impl;
+package cn.ego.jedis.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import cn.ego.rest.dao.JedisClient;
+import cn.ego.jedis.JedisClient;
 import redis.clients.jedis.JedisCluster;
 /**
  * 测试版
  * @author Sully
  *
  */
+@Repository
 public class JedisClientCluster implements JedisClient {
 
 	@Autowired

@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import cn.ego.jedis.JedisClient;
 import cn.ego.mapper.TbContentMapper;
 import cn.ego.pojo.TbContent;
 import cn.ego.pojo.TbContentExample;
 import cn.ego.pojo.TbContentExample.Criteria;
 import cn.ego.rest.bean.ADItem;
-import cn.ego.rest.dao.JedisClient;
 import cn.ego.rest.service.ContentService;
 import cn.ego.utils.JsonUtils;
 

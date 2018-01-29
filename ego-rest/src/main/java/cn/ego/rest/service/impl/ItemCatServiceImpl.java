@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import cn.ego.bean.ItemCatResult;
+import cn.ego.jedis.JedisClient;
 import cn.ego.mapper.TbItemCatMapper;
 import cn.ego.pojo.TbItemCat;
 import cn.ego.pojo.TbItemCatExample;
 import cn.ego.pojo.TbItemCatExample.Criteria;
 import cn.ego.rest.bean.ItemCat;
-import cn.ego.rest.dao.JedisClient;
 import cn.ego.rest.service.ItemCatService;
 import cn.ego.utils.JsonUtils;
 
