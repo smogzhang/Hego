@@ -7,6 +7,9 @@
         <dependent-module archiveName="ego-commn-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ego-commn/ego-commn">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="ego-manager-pojo-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ego-manager-pojo/ego-manager-pojo">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="ego-portal"/>
         <property name="java-output-path" value="/ego-portal/target/classes"/>
     </wb-module>

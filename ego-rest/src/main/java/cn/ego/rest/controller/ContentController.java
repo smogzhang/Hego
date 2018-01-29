@@ -17,7 +17,7 @@ import cn.ego.rest.service.ContentService;
  *
  */
 @Controller
-@RequestMapping("/rest/content")
+@RequestMapping("/rest")
 public class ContentController {
 
 	@Autowired
@@ -28,7 +28,7 @@ public class ContentController {
 	 * @param categoryId
 	 * @return
 	 */
-	@RequestMapping("/advertising/{categoryId}")
+	@RequestMapping("/content/advertising/{categoryId}")
 	@ResponseBody
 	public List<ADItem> listADsByContentCategory(@PathVariable long categoryId) {
 		return contentService.listAdvertising(categoryId);

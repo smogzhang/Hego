@@ -13,7 +13,7 @@ import cn.ego.rest.service.ItemCatService;
  *
  */
 @Controller
-@RequestMapping("/rest/itemcat")
+@RequestMapping("/rest")
 public class ItemCatController {
 //http://localhost:8081/rest/item/all?callback=category.getDataService
 	
@@ -37,7 +37,7 @@ public class ItemCatController {
 	 * httpclient 解决跨域问题
 	 * @return 直接返回json数据
 	 */
-	@RequestMapping("/list")
+	@RequestMapping("/itemcat/list")
 	@ResponseBody
 	public ItemCatResult queryAllItemCategories() {
 		return itemCatService.queryAllItemCats();

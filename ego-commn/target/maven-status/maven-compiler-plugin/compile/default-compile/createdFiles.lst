@@ -9,6 +9,7 @@ cn\ego\bean\PictureResult.class
 cn\ego\utils\FtpUtil.class
 cn\ego\jedis\impl\JedisClientCluster.class
 cn\ego\jedis\JedisClient.class
+cn\ego\utils\CookieUtils.class
 cn\ego\utils\HttpClientUtil.class
 cn\ego\utils\IDUtils.class
 cn\ego\utils\JsonUtils.class
