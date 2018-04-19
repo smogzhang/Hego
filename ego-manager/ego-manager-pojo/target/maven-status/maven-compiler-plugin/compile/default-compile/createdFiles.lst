@@ -46,6 +46,7 @@ cn\ego\vo\ItemParamDataVo.class
 cn\ego\pojo\TbItemParamExample$Criterion.class
 cn\ego\pojo\TbItemParamExample.class
 cn\ego\pojo\TbContentExample$Criteria.class
+cn\ego\vo\ContentVo.class
 cn\ego\pojo\TbItemParamItemExample.class
 cn\ego\pojo\TbContentExample.class
 cn\ego\pojo\TbUserExample$Criterion.class
