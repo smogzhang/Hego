@@ -2,9 +2,12 @@ package cn.ego.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
@@ -16,6 +19,7 @@ import cn.ego.pojo.TbContent;
 import cn.ego.pojo.TbContentExample;
 import cn.ego.pojo.TbContentExample.Criteria;
 import cn.ego.service.ContentService;
+import cn.ego.utils.HttpClientUtil;
 import cn.ego.vo.ContentVo;
 
 @Service
@@ -23,6 +27,14 @@ public class ContentServiceImpl implements ContentService {
 
 	@Autowired
 	private TbContentMapper contentMapper;
+	@Value("${REST_BASE_URL}")
+	private String REST_BASE_URL;
+	@Value("${CACHE_DATA_SYNC}")
+	private String CACHE_DATA_SYNC;
+	@Value("${CONTENT_ADVERTISING_IDENTIFYING}")
+	private String CONTENT_ADVERTISING_IDENTIFYING;
+	@Value("${ITEM_CATEGORY_IDENTIFYING}")
+	private String ITEM_CATEGORY_IDENTIFYING;
 	
 	/*查*/
 	@Override
@@ -65,6 +77,8 @@ public class ContentServiceImpl implements ContentService {
 		content.setCreated(date);
 		content.setUpdated(date);
 		contentMapper.insert(content);
+		// 调用方法 清除缓存
+		syncCacheData(content);
 	}
 
 	/*删*/
@@ -74,6 +88,11 @@ public class ContentServiceImpl implements ContentService {
 		Criteria criteria = example.createCriteria();
 		criteria.andIdIn(ids);
 		contentMapper.deleteByExample(example);
+		// 直接删除所有缓存数据，而不是散列表中的某一列
+		Map<String, String> param = new HashMap<String, String>();
+		param.put("hkey", CONTENT_ADVERTISING_IDENTIFYING);
+		param.put("skey", null);
+		HttpClientUtil.doGet(REST_BASE_URL + CACHE_DATA_SYNC, param);
 	}
 
 	/*改*/
@@ -82,6 +101,16 @@ public class ContentServiceImpl implements ContentService {
 		content.setUpdated(new Date());
 		//允许修改content富文本内容
 		contentMapper.updateByPrimaryKeyWithBLOBs(content);
+		// 调用方法 清除缓存
+		syncCacheData(content);
+	}
+	
+	/*删除缓存*/
+	private void syncCacheData(TbContent content) {
+		Map<String, String> param = new HashMap<String, String>();
+		param.put("hkey", CONTENT_ADVERTISING_IDENTIFYING);
+		param.put("skey", content.getCategoryId()+"");
+		HttpClientUtil.doGet(REST_BASE_URL + CACHE_DATA_SYNC, param);
 	}
 
 }
