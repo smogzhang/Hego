@@ -21,6 +21,7 @@ public class ItemSearchController {
 	public SearchResult listItemsBySolrCore(@RequestParam(value="kw",required=false) String queryString, @RequestParam(defaultValue="1") int page, @RequestParam(defaultValue="20") int rows) {
 		SearchResult result = null;
 		try {
+			queryString = new String(queryString.getBytes("ISO8859-1"),"UTF-8");
 			result = itemSearchService.listItems(queryString, page, rows);
 		} catch (Exception e) {
 			e.printStackTrace();

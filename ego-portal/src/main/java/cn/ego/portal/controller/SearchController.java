@@ -1,5 +1,7 @@
 package cn.ego.portal.controller;
 
+import java.io.UnsupportedEncodingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,12 @@ public class SearchController {
 	
 	@RequestMapping("/items")
 	public String searchItems(@RequestParam(value="q", required=false) String queryString, Integer page, Model model) {
+		try {
+			queryString = new String(queryString.getBytes("ISO8859-1"), "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+			return "error/exception";
+		}
 		EgoResult result = searchService.listItemsByQueryString(queryString, page);
 		SearchResult searchResult = (SearchResult) result.getData();
 		if(searchResult == null) {
